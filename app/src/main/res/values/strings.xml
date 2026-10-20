@@ -1,3 +1,87 @@
 <resources>
-    <string name="app_name">Smart Pantry Manager</string>
+    <string name="app_name">Smart Pantry</string>
+
+    <!-- Screen titles -->
+    <string name="title_pantry">My Pantry</string>
+    <string name="title_add_ingredient">Add Ingredient</string>
+    <string name="title_edit_ingredient">Edit Ingredient</string>
+    <string name="title_suggested">Suggested Recipes</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_recipes">Recipes</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Pantry list -->
+    <string name="pantry_empty">Your pantry is empty.\nTap + to add your first ingredient.</string>
+    <string name="expiring_banner">%1$d item(s) expired or expiring within %2$d day(s)</string>
+
+    <!-- Add / edit -->
+    <string name="no_expiry">No expiry date</string>
+    <string name="expiry_label">Expires: %1$s</string>
+    <string name="item_added">Ingredient added</string>
+    <string name="item_updated">Ingredient updated</string>
+    <string name="item_deleted">%1$s deleted</string>
+    <string name="item_not_found">Ingredient not found</string>
+    <string name="save_failed">Could not save – please try again</string>
+
+    <!-- Validation errors -->
+    <string name="error_name_required">Please enter an ingredient name</string>
+    <string name="error_name_too_long">Name must be %1$d characters or fewer</string>
+    <string name="error_name_invalid">Use letters only (e.g. Tomato)</string>
+    <string name="error_quantity_required">Please enter a quantity</string>
+    <string name="error_quantity_invalid">Enter a valid number</string>
+    <string name="error_quantity_positive">Quantity must be greater than 0</string>
+    <string name="error_quantity_too_large">Quantity is too large</string>
+
+    <!-- Dialogs -->
+    <string name="delete_title">Delete ingredient?</string>
+    <string name="delete_message">Remove \"%1$s\" from your pantry?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
+    <string name="clear_pantry_title">Clear pantry?</string>
+    <string name="clear_pantry_message">This deletes every ingredient in your pantry. Recipes are not affected.</string>
+    <string name="pantry_cleared">Pantry cleared</string>
+
+    <!-- Suggestions -->
+    <string name="suggestions_summary">You can make %1$d of %2$d recipes right now</string>
+    <string name="no_matches">No recipes match your pantry yet – add more ingredients.</string>
+    <string name="no_matches_empty_pantry">Your pantry is empty – add ingredients to see what you can cook.</string>
+    <string name="go_to_pantry">Go to pantry</string>
+
+    <!-- Recipe detail -->
+    <string name="recipe_not_found">Recipe not found</string>
+    <string name="ingredient_count">%1$d ingredients</string>
+    <string name="ingredients_heading">Ingredients</string>
+    <string name="method_heading">Method</string>
+    <string name="bullet">•</string>
+
+    <!-- Pantry rows -->
+    <string name="add_ingredient">Add ingredient</string>
+    <string name="expires_on">Expires %1$s</string>
+    <string name="expired_on">Expired %1$s</string>
+
+    <!-- Add / edit form labels -->
+    <string name="hint_ingredient_name">Ingredient name</string>
+    <string name="hint_quantity">Quantity</string>
+    <string name="label_unit">Unit</string>
+    <string name="label_expiry">Expiry date (optional)</string>
+    <string name="pick_date">Pick date</string>
+    <string name="clear_date">Remove date</string>
+    <string name="save">Save</string>
+    <string name="delete_item">Delete ingredient</string>
+
+    <!-- Settings labels -->
+    <string name="settings_section_alerts">Alerts</string>
+    <string name="settings_section_units">Units</string>
+    <string name="settings_section_data">Data</string>
+    <string name="settings_section_about">About</string>
+    <string name="settings_alerts_title">Expiring-soon alerts</string>
+    <string name="settings_alerts_summary">Show a banner on the pantry screen when ingredients are about to expire.</string>
+    <string name="settings_warning_days">Warn me this many days before expiry</string>
+    <string name="settings_default_unit">Default unit for new ingredients</string>
+    <string name="clear_pantry">Clear pantry</string>
+    <string name="settings_about">Smart Pantry Manager suggests only recipes you can cook with what you already have, to help cut food waste.</string>
 </resources>

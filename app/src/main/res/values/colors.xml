@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Brand -->
+    <color name="brand_green">#2E7D32</color>
+    <color name="brand_green_dark">#1B5E20</color>
+    <color name="brand_green_light">#C8E6C9</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_secondary">#5F6368</color>
+
+    <!-- Status -->
+    <color name="expired_red">#C62828</color>
+    <color name="warning_background">#FFF3E0</color>
+    <color name="warning_text">#E65100</color>
 </resources>
