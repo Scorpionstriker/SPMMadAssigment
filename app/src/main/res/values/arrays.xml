@@ -1,6 +1,6 @@
 <resources>
     <!-- Units offered in the Add/Edit and Settings spinners.
-         UnitConverter must recognize every one of these. -->
+         UnitManager must recognize every one of these. -->
     <string-array name="units">
         <item>g</item>
         <item>kg</item>
