@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
-  UnitManager - converts quantities to one BASE unit per category so they can be compared.
+  UnitManager: converts quantities to one BASE unit per category so they can be compared.
 
     MASS   -> grams       (g, kg, mg)
     VOLUME -> millilitres (ml, L, tsp, tbsp, cup)
@@ -15,8 +15,8 @@ import java.util.Set;
 
     Example: 1.5 kg -> 1500 g, so it satisfies a recipe that needs 500 g.
 
-    Quantities in DIFFERENT categories are never compared (200 g of flour is not
-    "2 cups" of flour - that would need the density of every ingredient).
+    Quantities in DIFFERENT categories are never compared 200 g of flour is not
+    "2 cups" of flour: that would need the density of every ingredient.
  */
 public final class UnitManager {
 
@@ -37,7 +37,7 @@ public final class UnitManager {
         GRAMS_PER_UNIT.put("kilogram", 1000.0);
         GRAMS_PER_UNIT.put("kilograms", 1000.0);
 
-        // Volume -> millilitres (metric kitchen measures)
+        // Volume -> millilitres
         MILLILITRES_PER_UNIT.put("ml", 1.0);
         MILLILITRES_PER_UNIT.put("millilitre", 1.0);
         MILLILITRES_PER_UNIT.put("millilitres", 1.0);
@@ -65,7 +65,7 @@ public final class UnitManager {
         // static helper only
     }
 
-    /** Which category a unit belongs to (case-insensitive: "KG", "kg" and " Kg " all work). */
+    /** Which category a unit belongs to case-insensitive: "KG", "kg" and " Kg " all work. */
     public static Category categoryOf(String unit) {
         String key = clean(unit);
         if (GRAMS_PER_UNIT.containsKey(key)) {

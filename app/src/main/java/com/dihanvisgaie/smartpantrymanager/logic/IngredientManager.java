@@ -106,25 +106,25 @@ public final class IngredientManager {
             return "";
         }
 
-        // 1. Lowercase; hyphens become spaces ("self-raising" -> "self raising")
+        // Lowercase; hyphens become spaces self-raising -> self raising
         String name = rawName.toLowerCase(Locale.ROOT).replace('-', ' ');
 
-        // 2. Remove anything that is not a letter or space (digits, apostrophes, commas)
+        // Remove anything that is not a letter or space digits, apostrophes, commas
         name = name.replaceAll("[^\\p{L} ]", "");
 
-        // 3. Collapse multiple spaces and trim
+        // Collapse multiple spaces and trim
         name = name.replaceAll("\\s+", " ").trim();
         if (name.isEmpty()) {
             return "";
         }
 
-        // 4. Make the LAST word singular ("baked beans" -> "baked bean", "eggs" -> "egg")
+        // Make the LAST word singular baked beans -> baked bean, eggs -> egg
         int lastSpace = name.lastIndexOf(' ');
         String prefix = lastSpace == -1 ? "" : name.substring(0, lastSpace + 1);
         String lastWord = lastSpace == -1 ? name : name.substring(lastSpace + 1);
         name = prefix + singularize(lastWord);
 
-        // 5. Map synonyms to one standard name
+        // Map synonyms to one standard name
         String synonym = SYNONYMS.get(name);
         return synonym != null ? synonym : name;
     }
