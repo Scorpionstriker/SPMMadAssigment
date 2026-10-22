@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Settings screen: expiry alerts, default unit, clear pantry, about -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ===== Alerts ===== -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_alerts" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchExpiryAlerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_alerts_title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_alerts_summary"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/settings_warning_days" />
+
+            <Spinner
+                android:id="@+id/spinnerWarningDays"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <!-- ===== Units ===== -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_units" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_default_unit" />
+
+            <Spinner
+                android:id="@+id/spinnerDefaultUnit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <!-- ===== Data ===== -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_data" />
+
+            <Button
+                android:id="@+id/btnClearPantry"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_pantry"
+                android:textColor="@color/expired_red" />
+
+            <!-- ===== About ===== -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_about" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_about"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu" />
 </LinearLayout>

@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- One ingredient line on the Recipe Detail screen: "• Egg            3 pcs" -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="6dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/bullet"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="@color/brand_green" />
+
+    <TextView
+        android:id="@+id/tvIngredientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <TextView
+        android:id="@+id/tvIngredientAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textStyle="bold" />
 </LinearLayout>
