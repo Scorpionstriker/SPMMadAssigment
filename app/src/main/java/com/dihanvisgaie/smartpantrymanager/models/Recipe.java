@@ -12,7 +12,8 @@ public class Recipe {
 
     private final long id;
     private final String name;
-    private final String steps; // one step per line
+    private final String steps;
+    // one step per line
     private final List<RecipeIngredient> ingredients = new ArrayList<>();
 
     public Recipe(long id, String name, String steps) {
@@ -33,12 +34,12 @@ public class Recipe {
         return steps;
     }
 
-    /** Read-only view, so other classes can't accidentally change a recipe's ingredients. */
+    /* Read-only view, so other classes can't accidentally change a recipe's ingredients. */
     public List<RecipeIngredient> getIngredients() {
         return Collections.unmodifiableList(ingredients);
     }
 
-    /** Used by RecipeDao while loading. */
+    /* Used by RecipeDao while loading. */
     public void addIngredient(RecipeIngredient ingredient) {
         ingredients.add(ingredient);
     }

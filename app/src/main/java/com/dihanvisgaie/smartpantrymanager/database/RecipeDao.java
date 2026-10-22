@@ -26,7 +26,7 @@ public class RecipeDao {
         dbHelper = DatabaseHelper.getInstance(context);
     }
 
-    /**
+    /*
         Returns ALL recipes, each with its full ingredient list, sorted by name.
 
         Uses exactly TWO queries all recipes, then all ingredients and joins them in
@@ -67,7 +67,7 @@ public class RecipeDao {
         return new ArrayList<>(recipesById.values());
     }
 
-    /** Returns one recipe with its ingredients, or null if the id doesn't exist. */
+    /* Returns one recipe with its ingredients, or null if the id doesn't exist. */
     public Recipe getByIdWithIngredients(long recipeId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String[] args = {String.valueOf(recipeId)};
@@ -96,7 +96,7 @@ public class RecipeDao {
         return recipe;
     }
 
-    /** Total number of recipes in the database useful for checks and the report. */
+    /* Total number of recipes in the database useful for checks and the report. */
     public int count() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         try (Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + RecipeTable.TABLE_NAME, null)) {

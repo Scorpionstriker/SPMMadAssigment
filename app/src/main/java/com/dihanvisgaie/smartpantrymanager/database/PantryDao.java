@@ -48,7 +48,7 @@ public class PantryDao {
 
     // READ
 
-    /** Returns every pantry item, sorted alphabetically case-insensitive. */
+    /* Returns every pantry item, sorted alphabetically case-insensitive. */
     public List<PantryItem> getAll() {
         List<PantryItem> items = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -68,7 +68,7 @@ public class PantryDao {
         return items;
     }
 
-    /** Returns one pantry item, or null if no row has that id. */
+    /* Returns one pantry item, or null if no row has that id. */
     public PantryItem getById(long id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         try (Cursor cursor = db.query(
@@ -100,7 +100,7 @@ public class PantryDao {
 
     // DELETE
 
-    /** Deletes one item by id. Returns number of rows deleted. */
+    /* Deletes one item by id. Returns number of rows deleted. */
     public int delete(long id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         return db.delete(
@@ -109,7 +109,7 @@ public class PantryDao {
                 new String[]{String.valueOf(id)});
     }
 
-    /** Deletes every pantry item used by "Clear pantry" in Settings. Recipes are untouched. */
+    /* Deletes every pantry item used by Clear pantry in Settings. Recipes are untouched. */
     public int deleteAll() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         return db.delete(PantryTable.TABLE_NAME, null, null);
@@ -119,7 +119,7 @@ public class PantryDao {
 
     /**
         Converts a PantryItem into column/value pairs. The normalized name is calculated
-        here, so every row saved is ready for strict matching "Tomatoes " -> "tomato".
+        here, so every row saved is ready for strict matching Tomatoes  -> tomato.
      */
     private ContentValues toContentValues(PantryItem item) {
         ContentValues values = new ContentValues();
@@ -136,7 +136,7 @@ public class PantryDao {
         return values;
     }
 
-    /** Builds a PantryItem from the Cursor's current row. */
+    /* Builds a PantryItem from the Cursor's current row. */
     private PantryItem fromCursor(Cursor cursor) {
         int expiryIndex = cursor.getColumnIndexOrThrow(PantryTable.COL_EXPIRY_DATE);
 

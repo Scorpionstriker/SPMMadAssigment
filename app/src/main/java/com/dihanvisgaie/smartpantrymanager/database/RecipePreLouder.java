@@ -28,7 +28,7 @@ public final class RecipePreLouder {
         // static helper only
     }
 
-    /** Inserts every starter recipe. */
+    /* Inserts every starter recipe. */
     public static void seed(SQLiteDatabase db) {
 
         insertRecipe(db, "Cheese Omelette",
@@ -258,7 +258,7 @@ public final class RecipePreLouder {
 
     // Helpers
 
-    /** Inserts one recipe row, then one row per ingredient linked by the new recipe id. */
+    /* Inserts one recipe row, then one row per ingredient linked by the new recipe id. */
     private static void insertRecipe(SQLiteDatabase db, String name, String steps,
                                      SeedIngredient... ingredients) {
         ContentValues recipeValues = new ContentValues();
@@ -283,12 +283,12 @@ public final class RecipePreLouder {
         }
     }
 
-    /** Short factory so each recipe above reads like a real ingredient list. */
+    /* Short factory so each recipe above reads like a real ingredient list. */
     private static SeedIngredient ing(String name, double quantity, String unit) {
         return new SeedIngredient(name, quantity, unit);
     }
 
-    /** Simple holder for one ingredient line in the seed data. */
+    /* Simple holder for one ingredient line in the seed data. */
     private static final class SeedIngredient {
         final String name;
         final double quantity;

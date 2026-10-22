@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static DatabaseHelper instance;
 
-    /**
+    /*
         Returns the single shared helper. The application context is used so that
         no Activity gets leaked by being held in this static field.
      */
@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DatabaseSchema.DATABASE_NAME, null, DatabaseSchema.DATABASE_VERSION);
     }
 
-    /**
+    /*
         Called every time the database is opened, before onCreate/onUpgrade.
         SQLite has foreign keys switched OFF by default, so they are switched on here.
         This makes ON DELETE CASCADE work for recipe_ingredients.
@@ -49,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
 
-    /**
+    /*
         Runs ONCE, the very first time the app opens the database the file doesn't exist yet.
         Android already wraps this method in a transaction, so if seeding fails, the
         tables are not left half-filled.
@@ -65,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         RecipePreLouder.seed(db);
     }
 
-    /**
+    /*
         Runs when DATABASE_VERSION is increased. For this project the simplest safe approach
         is to drop and rebuild everything. NOTE: this also clears the user's pantry.
      */

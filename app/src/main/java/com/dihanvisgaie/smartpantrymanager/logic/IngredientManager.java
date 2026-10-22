@@ -7,21 +7,21 @@ import java.util.Map;
 /**
     IngredientManager: turns a typed ingredient name into a standard matching key.
 
-    "Tomatoes "       -> "tomato"
-    "EGGS"            -> "egg"
-    "Cherries"        -> "cherry"
-    "chicken fillets" -> "chicken breast"   (synonym)
-    "Mielie meal"     -> "maize meal"       (synonym)
+    Tomatoes        -> tomato
+    EGGS            -> egg
+    Cherries        -> cherry
+    chicken fillets -> chicken breast   (synonym)
+    Mielie meal     -> maize meal       (synonym)
 
     Both the pantry and the recipe ingredients are saved with this key, so the
     strict-matching logic compares like with like instead of using a naive exact match.
  */
 public final class IngredientManager {
 
-    /** Plurals that don't follow the simple rules below. */
+    /* Plurals that don't follow the simple rules below. */
     private static final Map<String, String> IRREGULAR_PLURALS = new HashMap<>();
 
-    /** Different names for the same pantry ingredient -> one standard name singular form. */
+    /* Different names for the same pantry ingredient -> one standard name singular form. */
     private static final Map<String, String> SYNONYMS = new HashMap<>();
 
     static {
@@ -97,7 +97,7 @@ public final class IngredientManager {
         // static helper only
     }
 
-    /**
+    /*
         Returns the matching key for an ingredient name.
         Steps: lowercase -> strip punctuation -> collapse spaces -> singular -> synonyms.
      */
@@ -129,7 +129,7 @@ public final class IngredientManager {
         return synonym != null ? synonym : name;
     }
 
-    /** Simple English singular rules good enough for food names, not a full NLP solution. */
+    /* Simple English singular rules good enough for food names, not a full NLP solution. */
     static String singularize(String word) {
         if (word.length() <= 3) {
             return word;

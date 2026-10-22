@@ -18,14 +18,14 @@ public final class DatabaseSchema {
 
     public static final String DATABASE_NAME = "smart_pantry.db";
 
-    /** Increase this whenever the schema changes, so onUpgrade() runs. */
+    /* Increase this whenever the schema changes, so onUpgrade() runs. */
     public static final int DATABASE_VERSION = 1;
 
     private DatabaseSchema() {
         // constants only: no instances
     }
 
-    // pantry_items: what the user has at home (full CRUD)
+    // pantry_items: what the user has at home this is full CRUD
 
     public static final class PantryTable implements BaseColumns {
         public static final String TABLE_NAME = "pantry_items";
@@ -92,7 +92,7 @@ public final class DatabaseSchema {
                         + RecipeTable.TABLE_NAME + "(" + RecipeTable._ID + ") ON DELETE CASCADE"
                         + ")";
 
-        /** Speeds up get all ingredients for recipe X lookups. */
+        /* Speeds up get all ingredients for recipe X lookups. */
         public static final String CREATE_INDEX =
                 "CREATE INDEX idx_recipe_ingredients_recipe_id ON "
                         + TABLE_NAME + "(" + COL_RECIPE_ID + ")";

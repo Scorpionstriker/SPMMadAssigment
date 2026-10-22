@@ -20,7 +20,7 @@ import java.util.Set;
  */
 public final class UnitManager {
 
-    /** The kind of measurement a unit belongs to. */
+    /* The kind of measurement a unit belongs to. */
     public enum Category { MASS, VOLUME, COUNT, UNKNOWN }
 
     private static final Map<String, Double> GRAMS_PER_UNIT = new HashMap<>();
@@ -65,7 +65,7 @@ public final class UnitManager {
         // static helper only
     }
 
-    /** Which category a unit belongs to case-insensitive: "KG", "kg" and " Kg " all work. */
+    /* Which category a unit belongs to case-insensitive: "KG", "kg" and " Kg " all work. */
     public static Category categoryOf(String unit) {
         String key = clean(unit);
         if (GRAMS_PER_UNIT.containsKey(key)) {
@@ -80,8 +80,8 @@ public final class UnitManager {
         return Category.UNKNOWN;
     }
 
-    /**
-        Converts a quantity to its category's base unit (g, ml or pcs).
+    /*
+        Converts a quantity to its category's base unit g, ml or pcs.
         Unknown units are returned unchanged and only ever compared with the exact same unit.
      */
     public static double toBaseUnit(double quantity, String unit) {
@@ -97,7 +97,7 @@ public final class UnitManager {
         }
     }
 
-    /**
+    /*
         A key describing what kind of amount this is. Two amounts can only be compared
         when their keys are equal: "MASS", "VOLUME", "COUNT", or "UNKNOWN:<unit>".
      */

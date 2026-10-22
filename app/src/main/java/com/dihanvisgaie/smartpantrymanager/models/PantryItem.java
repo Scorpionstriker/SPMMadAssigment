@@ -15,12 +15,12 @@ public class PantryItem {
     private String expiryDate;
     // "yyyy-MM-dd", or null if none
 
-    /** Used by the Add/Edit form: no id yet SQLite assigns it on insert. */
+    /* Used by the Add/Edit form: no id yet SQLite assigns it on insert. */
     public PantryItem(String name, double quantity, String unit, String expiryDate) {
         this(0, name, null, quantity, unit, expiryDate);
     }
 
-    /** Used by PantryDao when reading a full row from the database. */
+    /* Used by PantryDao when reading a full row from the database. */
     public PantryItem(long id, String name, String normalizedName, double quantity,
                       String unit, String expiryDate) {
         this.id = id;
@@ -49,7 +49,7 @@ public class PantryItem {
         // recalculated on next get
     }
 
-    /** Matching key, e.g. "tomato". Calculated from the name if not loaded from the DB. */
+    /* Matching key, e.g. tomato. Calculated from the name if not loaded from the DB. */
     public String getNormalizedName() {
         if (normalizedName == null) {
             normalizedName = IngredientManager.normalize(name);
