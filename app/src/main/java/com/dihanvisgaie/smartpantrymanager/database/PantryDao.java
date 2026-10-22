@@ -59,7 +59,7 @@ public class PantryDao {
                 null,                                         // all columns
                 null, null,                                   // no WHERE clause
                 null, null,                                   // no GROUP BY / HAVING
-                PantryTable.COL_NAME + " COLLATE NO CASE ASC")) {
+                PantryTable.COL_NAME + " COLLATE NOCASE ASC")) {
 
             while (cursor.moveToNext()) {
                 items.add(fromCursor(cursor));
