@@ -213,4 +213,4 @@ As required by the brief, the app has:
 **Name:** `<Dihan Visagie>`
 **Student number:** `<402111461>`
 **Module:** Mobile App Development 700
-**Repository:** `<GitHub link>`
+**Repository:** `<https://github.com/Scorpionstriker/SPMMadAssigment>`
