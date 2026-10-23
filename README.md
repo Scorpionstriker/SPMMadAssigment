@@ -210,7 +210,7 @@ As required by the brief, the app has:
 
 ## Author
 
-**Name:** `<Your Name>`
-**Student number:** `<Your Student Number>`
+**Name:** `<Dihan Visagie>`
+**Student number:** `<402111461>`
 **Module:** Mobile App Development 700
 **Repository:** `<GitHub link>`
